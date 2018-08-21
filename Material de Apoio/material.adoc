@@ -10,33 +10,51 @@ Mauro Henrique Lima de Boni <mauro@ifto.edu.br>
 :toc:
 :allow-uri-read:
 :safe: unsafe
-
+:icons: font
+// é possível usar um simblo obtido por um codigo unicode!
+:tip-caption: 💡
+//:tip-caption: pass:[&#128161;]
+//🔍
+//lupa inclinada para a esquerda
+//Unicode: U+1F50D, UTF-8: F0 9F 94 8D
 
 ifdef::backend-pdf[]
 //include:: nomedoarquivo[]
 // teste
 endif::[]
 
-NOTE: Esse material é usado como apoio às aulas da disciplina de Testes de Software
- do Curso Superior de Tecnologia em Sistemas para WEB do Instituto Federal de Educação,
- Ciência e Tecnologia do Tocantins - IFTO. Ele não substitui livros técnicos ou
- outras fontes. Ele é apenas um resumo para auxiliar o estudante.
+[NOTE]
+Esse material é usado como apoio às aulas da disciplina de Testes de Software
+do Curso Superior de Tecnologia em Sistemas para WEB do Instituto Federal de Educação,
+Ciência e Tecnologia do Tocantins - IFTO. Ele não substitui livros técnicos ou
+outras fontes. Ele é apenas um resumo para auxiliar o estudante.
 
+
+[TIP]
+Procure por outras fontes para complementar esse material. Um bom lugar para começar
+é o site Infoq.com.br que traz palestras e artigos atualizados relacionados a
+diversos aspectos da engenharia de software.
 
 == O que é teste de software
 O teste é um processo independente. O número de tipos diferentes de teste varia
 tanto quanto as técnicas de desenvolvimento.
 
-Edsger Dijkstra, argumentava que os testes apenas mostrar a presença de erros e
-não a sua ausência, pois é possível de usar uma entrada de dados de testes que
+Edsger Dijkstra, argumentava que *os testes apenas são capazes de mostrar a presença de erros e
+não a sua ausência*, pois é possível de usar uma entrada de dados de testes que
 não seja boa ou até mesmo esquecermos de testar alguma parte do sistema. Assim,
 os testes não conseguem demonstrar que não há defeitos ou que ele sempre se
 comportará da maneira prevista em qualquer situação.
 
 Segundo Ian Sommerville, o teste de _software_ é uma etapa dentro do ciclo de vida
-que tem como objetivo descobrir os defeitos que um programa possui antes que ele
-entre em produção, isto é antes de ser entregue para que os usuários comecem a
+que *tem como objetivo descobrir os defeitos que um programa possui antes que ele
+entre em produção*, isto é antes de ser entregue para que os usuários comecem a
 utilizá-lo.
+
+Roger Pressmann, diz que o *teste de software faz parte de um processo amplo ao
+qual podemos chamar de  Verificação e Validação (V&V)*, sendo que por verificação
+estamos nos referindo a um conjunto de atividade que estão relacionadas com a
+garantia de que o _software_ "implementa corretamente uma função específica". Já
+a Validação tem como preocupação o atendimento os requisitos do cliente.
 
 == Quais os níveis de teste?
 Há sete níveis::
@@ -135,8 +153,8 @@ do produto.
 
 === Testes de usuário
 
-São testes onde os usuários ou clientes usam o software a fim de fornecer um feedback.
-Assim, eles experimentam o software para ver se gostam desse produto e verificam também se
+São testes onde os usuários ou clientes usam o software a fim de fornecer um _feedback_.
+Assim, eles experimentam o _software_ para ver se gostam desse produto e verificam também se
 ele está em conformidade com a suas necessidades.
 
 De modo geral, os testes de usuário ajudam a verificar se a interface permite o uso fácil
