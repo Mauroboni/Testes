@@ -1,18 +1,21 @@
 = Testes de software
-Mauro Henrique Lima de Boni <mauro@ifto.edu.br>
+Mauro Henrique Lima de Boni - mauro@ifto.edu.br
 2018-08-20
 //criar conta no Gitbook e verificar a integração do Github com ele.
 // endereço no gitbooks
 // https://ifto.gitbook.io/testes-de-software/.
 
 :appversion: 1.0.0
+:doctype: book
+:chapter-label:
 :sectnums:
-:toc:
 :allow-uri-read:
+:imagesdir: imagens
 :safe: unsafe
 :icons: font
 // é possível usar um simblo obtido por um codigo unicode!
 :tip-caption: 💡
+:toc:
 //:tip-caption: pass:[&#128161;]
 //🔍
 //lupa inclinada para a esquerda
@@ -35,9 +38,94 @@ Procure por outras fontes para complementar esse material. Um bom lugar para com
 é o site Infoq.com.br que traz palestras e artigos atualizados relacionados a
 diversos aspectos da engenharia de software.
 
+== Relembrando as atividades do processo de _software_
+Antes de falarmos sobre os testes é necessário localizá-lo dentre os processos
+da Engenharia de _Software_. Existem uma grande quantidade de processos de
+desenvolvimento de _software_ diferentes mas todos possuem as seguintes atividades:
+
+- especifcação – defnição do quê o sistema deve fazer;
+- projeto e implementação – defnição da organização do sistema e implementação do
+sistema;
+- verificação e validação – checagem de que o sistema faz o que o cliente deseja;
+- evolução – evolução em resposta a mudanças nas necessidades do cliente.
+
+Na primeira atividade, especificação, é onde conseguimos obter um entendimento geral
+sobre o problema a ser resolvido. Não temos todos os detalhes ainda, mas é possível
+obter o mínimo necessário para passar para as próximas etapas. Podemos dizer ainda
+que essa etapa estabelece quais serviços são necessários e quais são as restrições
+na operação e desenvolvimento do sistema. A disciplina Análise de Sistemas é a
+responsável por tratar dos assuntos relacionados a essa etapa.
+
+Projeto e implementação é uma atividade que pode ser entendida contendo duas partes
+que dificilmente são tratadas em separado dentro do mundo da computação e que têm
+como objetivo a conversão da especificação do sistema em um sistema executável.
+Em projeto criamos um _Design_ de uma estrutura de software que possa materializar
+a especifcação; e por implementação devemos entender que é o ato de transformar o
+_Design_ em um programa executável. No curso de sistemas para internet a disciplina
+Projeto de _Software_ é responsável por apresentar as técnicas e ferramentas utilizadas
+para a elaboração de estrutura do _software_. Já implementação está fracionada em
+várias disciplinas tais como Programação Orientada ao Objeto, Programação para WEB,
+dentre outras.
+
+A terceira atividade, Verificação e validação (V&V) tem o objetivo de mostrar que o
+produto que estamos construindo, um sistema por exemplo,  está em conformidade
+com sua especificação e ainda que ele está de acordo com os requisitos do
+cliente. Essa etapa é o objeto de estudo desta disciplina.
+
+Pro fim, temos a atividade chamada de evolução de _software_ ocorre quando é necessário alterar um
+sistema que já existe, tornando-o adequado a novas necessidades. Devemos lembrar que
+qualquer software precisa evoluir, pois caso isso não aconteça, ele deixará de atender
+às necessidades de seus usuários o que pode torna-lo útil em pouco tempo. Não há
+disciplina que específica no Curso de Sistema para Internet do IFTO e provavelmente
+em nenhum outro curso que lide diretamente com essa questão.
+
+=== Quando a atividade de testes inicia?
+A resposta para essa pergunta depende da maneira como as atividades do processo de
+software estão organizadas. Resumidamente, se estamos trabalhando em um paradigma
+orientado a planos, como o modelo cascata, elas são organizadas em sequência. Isso
+significa que os testes só começarão após as atividade de implementação terem sido
+concluídas. Já se estivermos falando sobre um ambiente que usa um modelo incremental,
+tal qual os modelos Ágeis, as atividades de projeto e implementação e de verificação
+e validação são intercaladas. As figuras <<#modeloCascata>> e <<desenvolvimentoIncremental>>
+mostram como as atividades são organizadas.
+
+==== Testes no modelo cascata
+[#modeloCascata]
+.Exemplo do modelo em cascata
+//[link=https://cdn-images-1.medium.com/max/1200/1*5vlem2hirY1jr_jXt8-QZA.png]
+image::Modelo-cascata.png[modeloCascata,600,400]
+
+No modelo cascata básico as atividades precisas ser completadas antes de se mover
+para a próxima. É possível a realização de testes durante a etapa de implementação,
+onde é possível que sejam executados de vários testes de desenvolvimento. Depois que
+esses testes tenham sido concluídos com êxito é que podemos passar para a verificação
+e realizar outros tipos de testes, como os testes de sistema e testes de usuário. Mas
+para atingirmos essas etapas devemos ter concluída as outras duas.
+
+==== Testes no modelo incremental
+
+[#desenvolvimentoIncremental]
+.Exemplo do modelo incremental
+//[link=https://cdn-images-1.medium.com/max/1200/1*5vlem2hirY1jr_jXt8-QZA.png]
+image::desenvolvimentoincremental2.png[desenvolvimentoIncremental,600,400]
+
+O modelo incremental é mais flexível que o modelo cascata. Tudo começa com um esboço
+do sistema. Uma vez que esse esboço seja feito é possível passar para a próxima
+atividade que intercala especificação, desenvolvimento e validação. Isso significa
+que a parir do esboço é possível especificar os requisitos, aplicar técnicas de
+projeto e fazer a implementação e realizar a validação.
+
 == O que é teste de software
-O teste é um processo independente. O número de tipos diferentes de teste varia
-tanto quanto as técnicas de desenvolvimento.
+Roger Pressmann, diz que o *teste de software faz parte de um processo amplo ao
+qual podemos chamar de  Verificação e Validação (V&V)*, sendo que por verificação
+estamos nos referindo a um conjunto de atividade que estão relacionadas com a
+garantia de que o _software_ "implementa corretamente uma função específica". Já
+a Validação tem como preocupação o atendimento os requisitos do cliente.
+
+Segundo Ian Sommerville, o teste de _software_ é uma etapa dentro do ciclo de vida
+que *tem como objetivo descobrir os defeitos que um programa possui antes que ele
+entre em produção*, isto é antes de ser entregue para que os usuários comecem a
+utilizá-lo.
 
 Edsger Dijkstra, argumentava que *os testes apenas são capazes de mostrar a presença de erros e
 não a sua ausência*, pois é possível de usar uma entrada de dados de testes que
@@ -45,16 +133,22 @@ não seja boa ou até mesmo esquecermos de testar alguma parte do sistema. Assim
 os testes não conseguem demonstrar que não há defeitos ou que ele sempre se
 comportará da maneira prevista em qualquer situação.
 
-Segundo Ian Sommerville, o teste de _software_ é uma etapa dentro do ciclo de vida
-que *tem como objetivo descobrir os defeitos que um programa possui antes que ele
-entre em produção*, isto é antes de ser entregue para que os usuários comecem a
-utilizá-lo.
+Podemos entender o teste é um processo independente, pois nem sempre quem desenvolve
+testará o software. Além disso, cumpre lembrar que número de tipos diferentes de
+teste varia tanto quanto as técnicas de desenvolvimento.
 
-Roger Pressmann, diz que o *teste de software faz parte de um processo amplo ao
-qual podemos chamar de  Verificação e Validação (V&V)*, sendo que por verificação
-estamos nos referindo a um conjunto de atividade que estão relacionadas com a
-garantia de que o _software_ "implementa corretamente uma função específica". Já
-a Validação tem como preocupação o atendimento os requisitos do cliente.
+• Envolve processos de inspeção e revisão, e testes do sistema.
+• Testes do sistema envolvem executar o sistema com casos de teste. São
+provenientes de especifcações dos dados reais que deverão ser processados
+pelo sistema.
+• O teste é a atvidade de V & V mais usada.
+
+
+=== Por que executar testes de _software_?
+
+=== Como o material está organizado
+
+
 
 == Quais os níveis de teste?
 Há sete níveis::
@@ -66,6 +160,26 @@ quais os caminhos de controle a serem testados a fim de que seja possível encon
 erros dentro desse módulo. Os testes de unidade, muitas vezes chamados de testes unitários,
 testarão métodos ou classes, uma vez que eles normalmente são as menores unidades
 do projeto.
+
+[#tdd]
+.O ciclo do TDD
+//[link=https://cdn-images-1.medium.com/max/1200/1*5vlem2hirY1jr_jXt8-QZA.png]
+image::tdd.png[testeAB,600,400]
+
+*Beneficios do TDD*
+
+Cobertura de código::: Cada segmento de código que você escreve deve ter pelo menos um teste associado,
+para todo o código escrito tem pelo menos um teste.
+
+Testes de regressão::: Um conjunto de testes de regressão é desenvolvido de forma incremental enquanto
+um programa é desenvolvido.
+
+Depuração simplificada::: Quando um teste falhar, deve ser óbvio onde está o problema. O código recém-escrito
+tem de ser verificado e modificado.
+
+Documentação de sistema::: Os próprios testes são uma forma de documentação que descreve o que o código
+deve estar fazendo.
+ 
 
 Testes de integração::: Realizados pelos programadores - pode ser automatizado.
 Também conhecido como teste de componente, uma vez que os componentes de um sistema
@@ -91,14 +205,15 @@ pelo dessenvolvedor que registra os problemas de uso e os erros que aconteceram.
 Teste Beta::: Realizados pelos usuários mais usuários - testes manuais. Os testes são feitos no ambiente do
 usuário. Mais mais dificil para o desenvolvedor acompanhar uma vez que podem haver uma
 quantidade muito grande de usuários.
-Teste de regressão::: reteste. Cada vez que um novo módulo é adicionado como parte
+
+Teste de regressão (reteste)::: Cada vez que um novo módulo é adicionado como parte
 do teste de integração, o _software_ se modifica. Novos caminhos de fluxo de dados
 são estabelecidos, nova E/S pode ocorrer e nova lógica de controle é acionada.
 Assim sendo, tudo o que havia sido previamente testado corre o risco de apresentarem
 problemas. Esse tipo de teste ajuda a garantir que modificações não introduzam
 algum comportamento indesejável ou erros adicionais.
 
-== Técnicas de Teste
+== Quais são as técnicas de Teste
 
 * Caixa Branca ( caixa aberta  - visualiza o código fonte - Teste de unidade, testes estáticos ( análise do código, sem executar-lo ) )
 ** Teste de métodos e Classes, Testes de comando de repetição, teste de condições
@@ -113,7 +228,7 @@ Teste baseado em entradas e saídas de Cenários Macro
 	- Teste baseado em Casos de uso
 	- Análise de Valores limites
 
-== Tipos de teste
+== Quais são os tipos de teste
 - Teste de funcionalidade
 - Teste de interface
 - Teste de desempenho
@@ -193,7 +308,7 @@ Os testes de aceitação possuem seis estágios a saber:
 [#testeAB]
 .A mountain sunset
 //[link=https://cdn-images-1.medium.com/max/1200/1*5vlem2hirY1jr_jXt8-QZA.png]
-image::https://cdn-images-1.medium.com/max/1200/1*5vlem2hirY1jr_jXt8-QZA.png[testeAB,300,200]
+image::testesAB.png[testeAB,300,200]
 
 
 As pesquisas atitudinais são focadas no que as pessoas falam que acreditam
