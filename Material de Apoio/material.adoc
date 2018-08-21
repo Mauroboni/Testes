@@ -2,6 +2,9 @@
 Mauro Henrique Lima de Boni <mauro@ifto.edu.br>
 2018-08-20
 //criar conta no Gitbook e verificar a integração do Github com ele.
+// endereço no gitbooks
+// https://ifto.gitbook.io/testes-de-software/.
+
 :appversion: 1.0.0
 :sectnums:
 :toc:
@@ -24,6 +27,16 @@ NOTE: Esse material é usado como apoio às aulas da disciplina de Testes de Sof
 O teste é um processo independente. O número de tipos diferentes de teste varia
 tanto quanto as técnicas de desenvolvimento.
 
+Edsger Dijkstra, argumentava que os testes apenas mostrar a presença de erros e
+não a sua ausência, pois é possível de usar uma entrada de dados de testes que
+não seja boa ou até mesmo esquecermos de testar alguma parte do sistema. Assim,
+os testes não conseguem demonstrar que não há defeitos ou que ele sempre se
+comportará da maneira prevista em qualquer situação.
+
+Segundo Ian Sommerville, o teste de _software_ é uma etapa dentro do ciclo de vida
+que tem como objetivo descobrir os defeitos que um programa possui antes que ele
+entre em produção, isto é antes de ser entregue para que os usuários comecem a
+utilizá-lo.
 
 == Quais os níveis de teste?
 Há sete níveis::
@@ -32,15 +45,28 @@ Testes de unidade::: Realizados pelos programadores - pode ser automatizado. O t
 focaliza o esforço de verificação na menor unidade do projeto de _software_ -- o
 componente ou módulo de _software_. A partir de uma documentação é possível verificar
 quais os caminhos de controle a serem testados a fim de que seja possível encontrar
-erros dentro desse módulo. Os testes de unidade
-Testes de integração::: Realizados pelos programadores - pode ser automatizado. É uma técnica sistemática
-que permite a construção da arquitetura do _software_ e simultaneamente, conduz os
-testes para descobrir erros associados às interfaces. Devemos entender que interfaces
-são o mecanismo usado para que as unidades, ou módulos, troquem informações. Assim,
-o teste de integração fará como que duas ou mais classes, por exemplo, sejam postas
-em funcionamento juntas. Se individualmente elas funcionaram, quando colocadas juntas,
-elas devem continuar funcionando.
-Teste de sistema::: testadores - testes manuais
+erros dentro desse módulo. Os testes de unidade, muitas vezes chamados de testes unitários,
+testarão métodos ou classes, uma vez que eles normalmente são as menores unidades
+do projeto.
+
+Testes de integração::: Realizados pelos programadores - pode ser automatizado.
+Também conhecido como teste de componente, uma vez que os componentes de um sistema
+são formados por diversos objetos de classes diferentes que interagem. É uma técnica
+sistemática que permite a construção da arquitetura do _software_ e simultaneamente,
+conduz os testes para descobrir erros associados às interfaces. Devemos entender
+que interfaces são o mecanismo usado para que as unidades, ou módulos, troquem
+informações. Assim, o teste de integração fará como que duas ou mais classes, por
+exemplo, sejam postas em funcionamento juntas. Se individualmente elas funcionaram,
+quando colocadas juntas, elas devem continuar funcionando.
+
+
+Teste de sistema::: testadores - testes manuais. Envolve a integração de vários
+componentes para a criação de uma versão do sistema. Esse teste verifica se os
+componentes são compatíveis, se interagem de maneira esperada e se executam as
+comunicações com outros ...
+
+
+
 Teste de aceitação::: usuários - testes manuais
 Teste Alfa::: Realizados pelos usuários - testes manuais. São testes realizados em um ambiente controlado
 pelo dessenvolvedor que registra os problemas de uso e os erros que aconteceram.
@@ -154,8 +180,8 @@ image::https://cdn-images-1.medium.com/max/1200/1*5vlem2hirY1jr_jXt8-QZA.png[tes
 
 As pesquisas atitudinais são focadas no que as pessoas falam que acreditam
 (por exemplo, ao responderem um formulário online ou em uma conversa dentro de
-um focus group), enquanto as pesquisas comportamentais analisam o que as pessoas
-fazem (por exemplo, em um teste de usabilidade, ou em testes A/B).
+um grupo focal (_focus group_)), enquanto as pesquisas comportamentais analisam
+o que as pessoas fazem (por exemplo, em um teste de usabilidade, ou em testes A/B).
 
 
 https://brasil.uxdesign.cc/muito-além-do-teste-de-usabilidade-os-vários-tipos-de-pesquisas-com-usuários-em-ux-b91a6e15bc61
