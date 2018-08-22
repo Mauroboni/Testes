@@ -1,9 +1,9 @@
-= Testes de software
+= Testes de _software_
 Mauro Henrique Lima de Boni - mauro@ifto.edu.br
 2018-08-20
 //criar conta no Gitbook e verificar a integração do Github com ele.
 // endereço no gitbooks
-// https://ifto.gitbook.io/testes-de-software/.
+// https://ifto.gitbook.io/testes-de-_software_/.
 
 :appversion: 1.0.0
 :doctype: book
@@ -27,7 +27,7 @@ ifdef::backend-pdf[]
 endif::[]
 
 [NOTE]
-Esse material é usado como apoio às aulas da disciplina de Testes de Software
+Esse material é usado como apoio às aulas da disciplina de Testes de _software_
 do Curso Superior de Tecnologia em Sistemas para WEB do Instituto Federal de Educação,
 Ciência e Tecnologia do Tocantins - IFTO. Ele não substitui livros técnicos ou
 outras fontes. Ele é apenas um resumo para auxiliar o estudante.
@@ -36,15 +36,15 @@ outras fontes. Ele é apenas um resumo para auxiliar o estudante.
 [TIP]
 Procure por outras fontes para complementar esse material. Um bom lugar para começar
 é o site Infoq.com.br que traz palestras e artigos atualizados relacionados a
-diversos aspectos da engenharia de software.
+diversos aspectos da engenharia de _software_.
 
 == Relembrando as atividades do processo de _software_
 Antes de falarmos sobre os testes é necessário localizá-lo dentre os processos
-da Engenharia de _Software_. Existem uma grande quantidade de processos de
+da Engenharia de _software_. Existem uma grande quantidade de processos de
 desenvolvimento de _software_ diferentes mas todos possuem as seguintes atividades:
 
-- especifcação – defnição do quê o sistema deve fazer;
-- projeto e implementação – defnição da organização do sistema e implementação do
+- especificação – definição do quê o sistema deve fazer;
+- projeto e implementação – definição da organização do sistema e implementação do
 sistema;
 - verificação e validação – checagem de que o sistema faz o que o cliente deseja;
 - evolução – evolução em resposta a mudanças nas necessidades do cliente.
@@ -59,10 +59,10 @@ responsável por tratar dos assuntos relacionados a essa etapa.
 Projeto e implementação é uma atividade que pode ser entendida contendo duas partes
 que dificilmente são tratadas em separado dentro do mundo da computação e que têm
 como objetivo a conversão da especificação do sistema em um sistema executável.
-Em projeto criamos um _Design_ de uma estrutura de software que possa materializar
-a especifcação; e por implementação devemos entender que é o ato de transformar o
+Em projeto criamos um _Design_ de uma estrutura de _software_ que possa materializar
+a especificação; e por implementação devemos entender que é o ato de transformar o
 _Design_ em um programa executável. No curso de sistemas para internet a disciplina
-Projeto de _Software_ é responsável por apresentar as técnicas e ferramentas utilizadas
+Projeto de _software_ é responsável por apresentar as técnicas e ferramentas utilizadas
 para a elaboração de estrutura do _software_. Já implementação está fracionada em
 várias disciplinas tais como Programação Orientada ao Objeto, Programação para WEB,
 dentre outras.
@@ -72,21 +72,24 @@ produto que estamos construindo, um sistema por exemplo,  está em conformidade
 com sua especificação e ainda que ele está de acordo com os requisitos do
 cliente. Essa etapa é o objeto de estudo desta disciplina.
 
-Pro fim, temos a atividade chamada de evolução de _software_ ocorre quando é necessário alterar um
-sistema que já existe, tornando-o adequado a novas necessidades. Devemos lembrar que
-qualquer software precisa evoluir, pois caso isso não aconteça, ele deixará de atender
+Por fim, temos a atividade chamada de evolução de _software_ ocorre quando é
+necessário alterar um sistema que já existe, tornando-o adequado a novas necessidades.
+Devemos lembrar que
+qualquer _software_ precisa evoluir, pois caso isso não aconteça, ele deixará de atender
 às necessidades de seus usuários o que pode torna-lo útil em pouco tempo. Não há
 disciplina que específica no Curso de Sistema para Internet do IFTO e provavelmente
 em nenhum outro curso que lide diretamente com essa questão.
 
 === Quando a atividade de testes inicia?
 A resposta para essa pergunta depende da maneira como as atividades do processo de
-software estão organizadas. Resumidamente, se estamos trabalhando em um paradigma
-orientado a planos, como o modelo cascata, elas são organizadas em sequência. Isso
-significa que os testes só começarão após as atividade de implementação terem sido
-concluídas. Já se estivermos falando sobre um ambiente que usa um modelo incremental,
-tal qual os modelos Ágeis, as atividades de projeto e implementação e de verificação
-e validação são intercaladas. As figuras <<#modeloCascata>> e <<desenvolvimentoIncremental>>
+_software_ estão organizadas. Resumidamente, tudo depende do paradigma que está sendo
+usado. Assim, se estamos trabalhando em um paradigma orientado a planos, como o
+modelo cascata, elas são organizadas em sequência. Isso significa que os testes
+só começarão após as atividade de implementação terem sido concluídas. Já se estivermos
+falando sobre um ambiente que usa um modelo incremental, tal qual os modelos Ágeis,
+as atividades de projeto e implementação e de verificação e validação são intercaladas.
+Para clarificar um pouco mais, a seguir os modelos em cascata e incremental são
+apresentados e as figuras <<#modeloCascata>> e <<desenvolvimentoIncremental>>
 mostram como as atividades são organizadas.
 
 ==== Testes no modelo cascata
@@ -95,7 +98,13 @@ mostram como as atividades são organizadas.
 //[link=https://cdn-images-1.medium.com/max/1200/1*5vlem2hirY1jr_jXt8-QZA.png]
 image::Modelo-cascata.png[modeloCascata,600,400]
 
-No modelo cascata básico as atividades precisas ser completadas antes de se mover
+Antes de mais nada é importante lembrar que o esse modelo, que pode ser chamado de
+ciclo de vida clássico, que segue uma abordagem sistemática e sequencial pode ser
+usado em cenários em os requisitos são bem entendidos ou que mudam pouco. Esse é
+o paradigma mais antigo da Engenharia de _software_, tendo provavelmente sido introduzido
+por engenheiros de outras áreas.
+
+No modelo cascata as atividades precisam ser completadas antes de se mover
 para a próxima. É possível a realização de testes durante a etapa de implementação,
 onde é possível que sejam executados de vários testes de desenvolvimento. Depois que
 esses testes tenham sido concluídos com êxito é que podemos passar para a verificação
@@ -103,6 +112,11 @@ e realizar outros tipos de testes, como os testes de sistema e testes de usuári
 para atingirmos essas etapas devemos ter concluída as outras duas.
 
 ==== Testes no modelo incremental
+
+Segundo Pressman, há muitas situações em que os requisitos iniciais são razoavelmente
+definidos e pode haver a necessidade de fornecer rapidamente um conjunto limitado
+de funcionalidades do _software_ aos usuários que será aumentado em versões posteriores.
+Em situações como essa, um modelo incremental pode ser escolhido.
 
 [#desenvolvimentoIncremental]
 .Exemplo do modelo incremental
@@ -113,10 +127,16 @@ O modelo incremental é mais flexível que o modelo cascata. Tudo começa com um
 do sistema. Uma vez que esse esboço seja feito é possível passar para a próxima
 atividade que intercala especificação, desenvolvimento e validação. Isso significa
 que a parir do esboço é possível especificar os requisitos, aplicar técnicas de
-projeto e fazer a implementação e realizar a validação.
+projeto e fazer a implementação e realizar a validação. Essas validações permitem
+que sejam entregues versões intermediárias que são na verdade um produto operacional.
 
-== O que é teste de software
-Roger Pressmann, diz que o *teste de software faz parte de um processo amplo ao
+== O que é teste de _software_
+O teste de _software_ é uma atividade que tem o objetivo de verificar se os resultados
+obtidos através do uso do produto correspondem aos resultados esperados. Além disso,
+ela é responsável também por tentar fazer como que sistema que está sendo testado
+esteja livre de Defeitos.
+
+Roger Pressmann, diz que o *teste de _software_ faz parte de um processo amplo ao
 qual podemos chamar de  Verificação e Validação (V&V)*, sendo que por verificação
 estamos nos referindo a um conjunto de atividade que estão relacionadas com a
 garantia de que o _software_ "implementa corretamente uma função específica". Já
@@ -127,24 +147,77 @@ que *tem como objetivo descobrir os defeitos que um programa possui antes que el
 entre em produção*, isto é antes de ser entregue para que os usuários comecem a
 utilizá-lo.
 
-Edsger Dijkstra, argumentava que *os testes apenas são capazes de mostrar a presença de erros e
-não a sua ausência*, pois é possível de usar uma entrada de dados de testes que
-não seja boa ou até mesmo esquecermos de testar alguma parte do sistema. Assim,
-os testes não conseguem demonstrar que não há defeitos ou que ele sempre se
+Edsger Dijkstra, argumenta que *os testes apenas são capazes de mostrar a presença
+de erros e não a sua ausência*, pois é possível de usar uma entrada de dados de
+testes que não seja boa ou até mesmo esquecermos de testar alguma parte do sistema.
+Assim, os testes não conseguem demonstrar que não há defeitos ou que ele sempre se
 comportará da maneira prevista em qualquer situação.
 
 Podemos entender o teste é um processo independente, pois nem sempre quem desenvolve
-testará o software. Além disso, cumpre lembrar que número de tipos diferentes de
+testará o _software_. Além disso, cumpre lembrar que número de tipos diferentes de
 teste varia tanto quanto as técnicas de desenvolvimento.
 
 • Envolve processos de inspeção e revisão, e testes do sistema.
 • Testes do sistema envolvem executar o sistema com casos de teste. São
-provenientes de especifcações dos dados reais que deverão ser processados
+provenientes de especificações dos dados reais que deverão ser processados
 pelo sistema.
-• O teste é a atvidade de V & V mais usada.
+• O teste é a atividade de V & V mais usada.
 
 
 === Por que executar testes de _software_?
+
+O teste é importante porque os erros de _software_ podem ser caros ou até tornarem-se
+perigosos. Erros de _software_ podem causar perdas monetárias e humanas, a história
+está cheia de exemplos.
+
+- O Voo 501 da Agência Espacial Européia Ariane 5 foi destruído 40 segundos após
+ a decolagem (4 de junho de 1996). O protótipo de foguete de US $ 1 bilhão foi
+ destruído devido a um bug no _software_ de orientação a bordo.
+
+video::gp_D8r-2hwk[youtube]
+
+
+https://www.guru99.com/software-testing-introduction-importance.html
+https://www.scientificamerican.com/article/pogue-5-most-embarrassing-software-bugs-in-history/
+http://tryqa.com/what-is-software-testing/
+
+Em um alto nível, o teste de _software_ é necessário para detectar os bugs no _software_
+ e para testar se o _software_ atende aos requisitos do cliente. Isso ajuda a equipe
+  de desenvolvimento a corrigir os erros e entregar um produto de boa qualidade.
+
+Há vários pontos no processo de desenvolvimento de _software_ em que o erro humano
+pode levar a um _software_ que não atende aos requisitos dos clientes. Alguns deles
+estão listados abaixo.
+
+- O cliente / pessoa que fornecer os requisitos em nome da organização do cliente
+pode não saber exatamente o que é necessário ou pode esquecer de fornecer alguns
+detalhes, o que pode levar à falta de recursos.
+
+- A pessoa que está coletando os requisitos pode interpretar erroneamente ou perder
+completamente um requisito quando documentá-los.
+
+- Durante a fase de design, se houver problemas no design, isso pode levar a erros
+no futuro
+
+- _Bugs_ podem ser introduzidos durante a fase de desenvolvimento durante o erro humano,
+falta de experiência, etc.
+
+- Os testadores podem perder erros durante a fase de testes devido a erro humano,
+falta de tempo, experiência insuficiente, etc.
+
+- Os clientes podem não ter a largura de banda para testar todos os recursos do produto
+e podem liberar o produto para seus usuários finais, o que pode levar os usuários
+finais a encontrar erros no aplicativo
+
+
+Um negócio e reputação de organizações depende da qualidade de seus produtos e,
+em alguns casos, até a receita pode depender das vendas de produtos de _software_.
+
+Os usuários podem preferir comprar um produto concorrente em um produto que tenha
+qualidade ruim e isso pode resultar em perda de receita para a organização.
+No mundo de hoje, a qualidade é uma das principais prioridades de qualquer
+organização.
+
 
 === Como o material está organizado
 
@@ -180,7 +253,6 @@ tem de ser verificado e modificado.
 Documentação de sistema::: Os próprios testes são uma forma de documentação que descreve o que o código
 deve estar fazendo.
  
-
 Testes de integração::: Realizados pelos programadores - pode ser automatizado.
 Também conhecido como teste de componente, uma vez que os componentes de um sistema
 são formados por diversos objetos de classes diferentes que interagem. É uma técnica
@@ -191,13 +263,10 @@ informações. Assim, o teste de integração fará como que duas ou mais classe
 exemplo, sejam postas em funcionamento juntas. Se individualmente elas funcionaram,
 quando colocadas juntas, elas devem continuar funcionando.
 
-
 Teste de sistema::: testadores - testes manuais. Envolve a integração de vários
 componentes para a criação de uma versão do sistema. Esse teste verifica se os
 componentes são compatíveis, se interagem de maneira esperada e se executam as
 comunicações com outros ...
-
-
 
 Teste de aceitação::: usuários - testes manuais
 Teste Alfa::: Realizados pelos usuários - testes manuais. São testes realizados em um ambiente controlado
@@ -268,7 +337,7 @@ do produto.
 
 === Testes de usuário
 
-São testes onde os usuários ou clientes usam o software a fim de fornecer um _feedback_.
+São testes onde os usuários ou clientes usam o _software_ a fim de fornecer um _feedback_.
 Assim, eles experimentam o _software_ para ver se gostam desse produto e verificam também se
 ele está em conformidade com a suas necessidades.
 
@@ -284,7 +353,7 @@ O teste de usuário é essencial, mesmo em sistemas abrangentes ou quando testes
  usuários estarão.
 
 Sobre o teste de aceitação é importante lembrar que os clientes querem usar o
-software assim que possível por causa dos benefícios que podem ser obtidos. Os
+_software_ assim que possível por causa dos benefícios que podem ser obtidos. Os
 testes de aceitação podem não terem obtido um bom resultado mas devido a uma séria
 de outros fatores, a adoção do produto pode começar mesmo assim.
 
