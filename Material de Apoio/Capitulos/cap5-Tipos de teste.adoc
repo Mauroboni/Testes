@@ -1,12 +1,23 @@
 [#Tipos]
 == Quais são os tipos de teste
 :cap: Capitulo 5
+
+Tipos de Teste: o alvo do teste
+
+Um grupo de atividades de teste pode ser direcionado para verificar o sistema (ou uma parte do sistema) com base em um motivo ou alvo específico.
+Cada tipo de teste tem foco em um objetivo particular, que pode ser o teste de uma funcionalidade, a ser realizada pelo software; uma característica da qualidade não funcional, como por exemplo a confiabilidade ou a usabilidade, a estrutura ou arquitetura do software ou sistema; ou ainda mudanças relacionadas, ex.: confirmar que os defeitos foram solucionados (teste de confirmação) e procurar por mudanças inesperadas (teste de regressão).
+Modelos do software podem ser elaborados e/ou usados no teste estrutural ou funcional. Por exemplo, para o teste funcional, um diagrama de fluxo de processo, um diagrama de transição de estados ou uma especificação do programa, e para teste estrutural um diagrama de controle de fluxo ou modelo de estrutura do menu.
+
+
 - Teste de funcionalidade
 - Teste de interface
 - Teste de desempenho
 - Teste de usabilidade
 - Teste de segurança
 - Teste usuário
+
+==== Teste de regressão (reteste)
+Cada vez que um novo módulo é adicionado como parte do teste de integração, o _software_ se modifica. Novos caminhos de fluxo de dados são estabelecidos, nova E/S pode ocorrer e nova lógica de controle é acionada. Assim sendo, tudo o que havia sido previamente testado corre o risco de apresentarem problemas. Esse tipo de teste ajuda a garantir que modificações não introduzam algum comportamento indesejável ou erros adicionais.
 
 
 === Testes de usabilidade

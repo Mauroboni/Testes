@@ -2,7 +2,7 @@
 
 == Quais os estágios de teste?
 :cap: Capitulo 3
-O guia SWEBOK <<SWEBOK>>nos informa que o teste de software é geralmente realizado em diferentes níveis ao longo dos processos de desenvolvimento e manutenção. Os níveis podem ser distinguidos tomando como base o objeto de teste, que é chamado de alvo, ou na finalidade, que é chamada de objetivo.
+O _Guide to the Software Engineering Body of Knowledge_ (SWEBOK) <<SWEBOK>> é um guia criado pelo IEEE e que trata de vários aspectos sobre a Engenharia de Software. Ele possui um capitulo dedicado ao testes que nos informa que o teste de software é geralmente realizado em diferentes níveis ao longo dos processos de desenvolvimento e manutenção. Os níveis podem ser distinguidos tomando como base o objeto que será testado, que é chamado de alvo, ou na finalidade, que é chamado de objetivo.
 
 //Parei aqui
 
@@ -17,7 +17,7 @@ Segundo Ian Sommerville<<SOMMERVILLE>>, todo software deve passar por três est�
  . Testes de integração
  . Testes de usuário
 
-Apesar dessa divisão ser simples, podemos criar outras categorias de estágio. A seguir cada um dos estágios é tratado com mais detalhes e as suas subdivisões são apresentadas.
+Apesar dessa divisão ser simples, podemos criar outras categorias de estágio. Para cada nível de teste, os seguintes aspectos podem ser identificados: seus objetivos genéricos, os produtos de trabalho utilizados como referência para derivar os casos de testes (ex.: base do teste), o objeto do teste (o que está sendo testado), defeitos e falhas típicas a se encontrar, testes (“harness”) e ferramentas de suporte e abordagens e responsabilidades específicas. A seguir cada um dos estágios é tratado com mais detalhes e as suas subdivisões são apresentadas.
 
 
 === Testes de desenvolvimento
@@ -66,18 +66,21 @@ image::{cap}/testing-integration.png[Teste de integração,300,300]
 
 O teste de integração, também conhecido como teste de componente, é o processo de verificar as interações entre os componentes de software. Ele fará com que duas ou mais classes, por exemplo, sejam postas em funcionamento juntas. Devemos pensar que se individualmente elas funcionaram, quando colocadas juntas, elas devem continuar funcionando. Estratégias clássicas de teste de integração, como _top-down_ e _bottom-up_, são frequentemente usadas com software estruturado hierarquicamente. Estratégias de integração modernas e sistemáticas são tipicamente direcionadas à arquitetura, o que envolve a integração gradual dos componentes ou subsistemas de software com base em segmentos funcionais identificados. O teste de integração geralmente é uma atividade contínua em cada estágio do desenvolvimento, durante o qual os engenheiros de software abstraem as perspectivas de nível inferior e concentram-se nas perspectivas do nível em que estão integrando. Para outros, além do software pequeno e simples, as estratégias de teste de integração incremental geralmente são preferidas para reunir todos os componentes de uma só vez - o que geralmente é chamado de teste _“big bang”_.
 
-
-==== Teste de regressão (reteste)
-Cada vez que um novo módulo é adicionado como parte do teste de integração, o _software_ se modifica. Novos caminhos de fluxo de dados são estabelecidos, nova E/S pode ocorrer e nova lógica de controle é acionada. Assim sendo, tudo o que havia sido previamente testado corre o risco de apresentarem problemas. Esse tipo de teste ajuda a garantir que modificações não introduzam algum comportamento indesejável ou erros adicionais.
-
-
 === Teste de sistema
-O teste do sistema está preocupado em testar o comportamento de um sistema inteiro. A unidade eficaz e o teste de integração terão identificado muitos dos defeitos do software. O teste do sistema é geralmente considerado apropriado para avaliar os requisitos não funcionais do sistema - como segurança, velocidade, precisão e confiabilidade. Interfaces externas para outros aplicativos, utilitários, dispositivos de hardware ou os ambientes operacionais também são geralmente avaliados nesse nível.
-
-
+O teste do sistema está preocupado em testar o comportamento de um sistema inteiro definido pelo escopo de um projeto ou programa de desenvolvimento. De acordo com o ISTQB, no teste de sistema, o ambiente de teste deve corresponder o máximo possível ao objetivo final, ou o ambiente de produção, para minimizar que os riscos de falhas específicas de ambiente não serem encontradas durante o teste. Ele pode ser baseado em descrições de alto nível do comportamento do sistema, tais como especificação de riscos e/ou de requisitos, processos de negócios ou casos de uso. O teste do sistema é geralmente considerado apropriado para avaliar os requisitos não funcionais do sistema, ou seja a segurança, a velocidade, precisão e também a confiabilidade. Interfaces externas para outros aplicativos, utilitários, dispositivos de _hardware_ ou os ambientes operacionais também são geralmente avaliados nesse nível. Uma equipe de teste independente é frequentemente responsável pelo teste de sistema.
 
 === Teste de aceitação
-usuários - testes manuais
-Teste Alfa::: Realizados pelos usuários - testes manuais. São testes realizados em um ambiente controlado
-pelo dessenvolvedor que registra os problemas de uso e os erros que aconteceram.
+O teste de aceitação ou de aceite frequentemente é realizado pelo cliente ou por usuário do sistema; os interessados (_stakeholders_) também podem ser envolvidos.
+O objetivo desse teste é estabelecer a confiança no sistema, parte do sistema ou uma característica não específica do sistema. Procurar defeitos não é o principal foco. Ele pode avaliar a disponibilidade do sistema para entrar em produção, apesar de não ser necessariamente o último nível de teste, uma vez que, por exemplo, um teste de integração em larga escala pode ser feito após.
+As formas de teste de aceite incluem tipicamente os seguintes:
+
+- Teste de aceitação pelo usuário
+- Teste Operacional de Aceite
+- Teste de aceite de contrato e regulamento
+- Alfa e Beta Teste (ou teste no campo)
+
+Teste Alfa::: Realizados pelos usuários - testes manuais. São testes realizados em um ambiente controlado pelo desenvolvedor que registra os problemas de uso e os erros que aconteceram.
+
 Teste Beta::: Realizados pelos usuários mais usuários - testes manuais. Os testes são feitos no ambiente do usuário. Mais mais difícil para o desenvolvedor acompanhar uma vez que podem haver uma quantidade muito grande de usuários.
+
+//

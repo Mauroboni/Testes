@@ -3,15 +3,14 @@
 :cap: Capitulo 1
 
 === Introdução
-Esse capitulo tem o objetivo de fornecer ao estudante uma ideia geral de onde
-os testes de software ocorrem dentro do processo de desenvolvimento. Essa ideia geral poderá auxilia-lo na tarefa de realizar conexões junto a outras disciplinas do curso, sendo as principais, Analise de Sistemas, Projeto de Sistemas, Programação para WEB II, XXX
+Esse capitulo tem como objetivos: fazer uma breve revisão sobre as atividades do processo de software, fornecer ao estudante uma ideia geral de onde os testes de software estão inseridos dentro do processo de desenvolvimento e realizar  algumas conexões entre essa disciplina e outras do curso, sobretudo Analise de Sistemas, Projeto de Sistemas, Programação para WEB II.
 
 ==== Como esse capitulo está estruturado
 O presente capitulo possui três seções principais. Cada uma delas trata de um assunto específico, conforme a lista a seguir:
 
-- A seção <<atividadesprocesso>> trata informações que o ajudarão ...
-- A seção <<Quando>> trata informações que o ajudarão ...
-- A seção <<relacao>> trata informações que o ajudarão ...
+- A seção <<atividadesprocesso>> é um breve resumo sobre as atividades que são executadas durante o processo de software de maneira que possamos encontrar onde os testes estão inseridos.
+- A seção <<Quando>> faz uma revisão sobre dois modelos de desenvolvimento bastante conhecidos o cascata e o incremental e discute brevemente sobre quando os testes devem começar.
+- A seção <<relacao>>
 
 
 [#atividadesprocesso]
@@ -31,8 +30,7 @@ Projeto e implementação é uma atividade que pode ser entendida contendo duas 
 
 A terceira atividade, Verificação e validação (V&V) tem o objetivo de mostrar que o produto que estamos construindo, um sistema por exemplo,  está em conformidade com sua especificação e ainda que ele está de acordo com os requisitos do cliente. Essa etapa é o objeto de estudo desta disciplina.
 
-Por fim, temos a atividade chamada de evolução de _software_ ocorre quando é
-necessário alterar um sistema que já existe, tornando-o adequado a novas necessidades.
+Por fim, temos a atividade chamada de evolução de _software_ ocorre quando é necessário alterar um sistema que já existe, tornando-o adequado a novas necessidades.
 Devemos lembrar que qualquer _software_ precisa evoluir, pois caso isso não aconteça, ele deixará de atender às necessidades de seus usuários o que pode torna-lo útil em pouco tempo. Não há disciplina que específica no Curso de Sistema para Internet do IFTO e provavelmente em nenhum outro curso que lide diretamente com essa questão.
 
 [#Quando]
