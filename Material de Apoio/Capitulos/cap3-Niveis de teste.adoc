@@ -1,0 +1,83 @@
+[#Estagios]
+
+== Quais os estágios de teste?
+:cap: Capitulo 3
+O guia SWEBOK <<SWEBOK>>nos informa que o teste de software é geralmente realizado em diferentes níveis ao longo dos processos de desenvolvimento e manutenção. Os níveis podem ser distinguidos tomando como base o objeto de teste, que é chamado de alvo, ou na finalidade, que é chamada de objetivo.
+
+//Parei aqui
+
+O alvo do teste pode variar: um único módulo, um grupo desses módulos
+(relacionados por finalidade, uso, comportamento ou estrutura) ou um sistema inteiro.
+Podemos criar três estágios ou níveis de teste. Esses três estágios de teste não
+implicam em nenhum modelo de processo, e nenhum  deles é considerado mais importante que os outros dois.
+
+Segundo Ian Sommerville<<SOMMERVILLE>>, todo software deve passar por três estágios de teste.
+
+ . Testes de desenvolvimento
+ . Testes de integração
+ . Testes de usuário
+
+Apesar dessa divisão ser simples, podemos criar outras categorias de estágio. A seguir cada um dos estágios é tratado com mais detalhes e as suas subdivisões são apresentadas.
+
+
+=== Testes de desenvolvimento
+Os testes de desenvolvimento representam todos os testes que são realizados pelos desenvolvedores de um sistema. Nesse caso, o testador é o próprio desenvolvedor ou um membro da equipe.
+
+==== Testes de unidade / unitário
+Os testes de unidade, muitas vezes chamados de testes unitários, são responsáveis por verificar o funcionamento de elementos de software de maneira isolada, ou seja eles são testados de forma individual ​​separadamente. O teste de unidade focaliza o esforço de verificação na menor unidade do projeto de _software_ -- o componente ou módulo de _software_. Se estivermos escrevendo um código usando uma linguagem como o JAVA por exemplo, serão testados os métodos das classes, uma vez que eles normalmente são as menores unidades do projeto. O teste de unidade, na maioria das vezes, ocorre com acesso ao código fonte que está sendo testado e com o suporte de ferramentas de depuração. Os programadores que escreveram o código frequentemente, mas nem sempre, realizam testes unitários. O TDD (do inglês _Test Driven Development_) ou Desenvolvimento Guiado por Testes, que é um exemplo de teste unitário, é apresentado na seção a seguir.
+
+Esse material pode ajudar. Dar uma olhada !!
+https://edisciplinas.usp.br/pluginfile.php/384739/mod_resource/content/1/Aula%205_2014_Tipos-de-teste-software-v2.pdf
+http://homepages.dcc.ufmg.br/~figueiredo/disciplinas/aulas/testes-software_v01.pdf
+
+
+===== Desenvolvimento Guiado por Testes (TDD, do inglês _Test Driven Development_)
+O TDD é uma abordagem para o desenvolvimento de programas em que se intercalam testes e a escrita de código-fonte. O código evolui de maneira incremental, juntamente com um teste para esse incremento. Importante: *Nada é feito, ou seja, nenhum novo código é escrito sem que aquilo que está sendo testado passe no teste.* A figura <<#tdd>>, mostrada a seguir, que foi copiada do livro de Engenharia de Software de Ian Sommerville<<SOMMERVILLE>>, fornece uma visão geral sobre o processo do TDD.
+
+[#tdd]
+.O ciclo do TDD
+//[link=https://cdn-images-1.medium.com/max/1200/1*5vlem2hirY1jr_jXt8-QZA.png]
+image::{cap}/tdd.png[testeAB,600,400]
+
+O ciclo de desenvolvimento usando o TDD envolve antes de tudo uma mudança no paradigma ao qual o programador está acostumando. Ao invés de começar a escrever a funcionalidade a ser incrementada, ele escreve um teste. A sequencia de passos do TDD pode ser explicada assim:
+
+. Identificar o incremento necessário. Ele deve ser pequeno e implementável em
+poucas linhas de código. Ele não será escrito ainda;
+. Escrever um teste para esse incremento. Esse teste será feito por uma ferramenta própria de testes, como o _JUnit_. Esse ferramenta é quem fará o teste e relatará se houve sucesso ou não.
+. Executar o teste. A ferramenta poderá também refazer todos os testes que já
+foram feitos anteriormente. Nesse caso, o resultado obtido é uma falha do teste.
+Mas por que? Lembre-se que você ainda não implementou a nova funcionalidade. Essa falha o ajudará a não esquecer de fazer a codificação.
+. Implementar a nova funcionalidade e executar o teste novamente. O código pode ser refatorado e melhorado completamente.
+. Depois que os testes forem executados com sucesso, voltamos ao passo 1.
+
+*Beneficios do TDD*
+
+Cobertura de código::: Cada segmento de código que você escreve deve ter pelo menos um teste associado, para todo o código escrito tem pelo menos um teste.
+
+Testes de regressão::: Um conjunto de testes de regressão é desenvolvido de forma incremental enquanto um programa é desenvolvido.
+
+Depuração simplificada::: Quando um teste falhar, deve ser óbvio onde está o problema. O código recém-escrito tem de ser verificado e modificado.
+
+Documentação de sistema::: Os próprios testes são uma forma de documentação que descreve o que o código deve estar fazendo.
+
+
+==== Testes de integração
+image::{cap}/testing-integration.png[Teste de integração,300,300]
+
+O teste de integração, também conhecido como teste de componente, é o processo de verificar as interações entre os componentes de software. Ele fará com que duas ou mais classes, por exemplo, sejam postas em funcionamento juntas. Devemos pensar que se individualmente elas funcionaram, quando colocadas juntas, elas devem continuar funcionando. Estratégias clássicas de teste de integração, como _top-down_ e _bottom-up_, são frequentemente usadas com software estruturado hierarquicamente. Estratégias de integração modernas e sistemáticas são tipicamente direcionadas à arquitetura, o que envolve a integração gradual dos componentes ou subsistemas de software com base em segmentos funcionais identificados. O teste de integração geralmente é uma atividade contínua em cada estágio do desenvolvimento, durante o qual os engenheiros de software abstraem as perspectivas de nível inferior e concentram-se nas perspectivas do nível em que estão integrando. Para outros, além do software pequeno e simples, as estratégias de teste de integração incremental geralmente são preferidas para reunir todos os componentes de uma só vez - o que geralmente é chamado de teste _“big bang”_.
+
+
+==== Teste de regressão (reteste)
+Cada vez que um novo módulo é adicionado como parte do teste de integração, o _software_ se modifica. Novos caminhos de fluxo de dados são estabelecidos, nova E/S pode ocorrer e nova lógica de controle é acionada. Assim sendo, tudo o que havia sido previamente testado corre o risco de apresentarem problemas. Esse tipo de teste ajuda a garantir que modificações não introduzam algum comportamento indesejável ou erros adicionais.
+
+
+=== Teste de sistema
+O teste do sistema está preocupado em testar o comportamento de um sistema inteiro. A unidade eficaz e o teste de integração terão identificado muitos dos defeitos do software. O teste do sistema é geralmente considerado apropriado para avaliar os requisitos não funcionais do sistema - como segurança, velocidade, precisão e confiabilidade. Interfaces externas para outros aplicativos, utilitários, dispositivos de hardware ou os ambientes operacionais também são geralmente avaliados nesse nível.
+
+
+
+=== Teste de aceitação
+usuários - testes manuais
+Teste Alfa::: Realizados pelos usuários - testes manuais. São testes realizados em um ambiente controlado
+pelo dessenvolvedor que registra os problemas de uso e os erros que aconteceram.
+Teste Beta::: Realizados pelos usuários mais usuários - testes manuais. Os testes são feitos no ambiente do usuário. Mais mais difícil para o desenvolvedor acompanhar uma vez que podem haver uma quantidade muito grande de usuários.

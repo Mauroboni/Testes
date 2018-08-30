@@ -1,0 +1,30 @@
+= Plano de aula
+
+.Conteúdo a ser ministrado
+[width="90%",cols="5%,25%,35%,35%",options="header"]
+|=========================================================
+|Data | Base Científica | Método | Avaliação
+
+|22/08/2018 |O que é teste de _software_ |
+30 minutos de aula expositiva
+
+30 minutos de discussão em pequenos grupos
+
+20 minutos para  discussão geral |
+Não há avaliação
+
+|29-Aug-08 |O que é teste de _software_ |
+30 minutos de aula expositiva
+
+30 minutos de discussão em pequenos grupos
+
+20 minutos para  discussão geral |
+Não há avaliação
+
+|29-Aug-08 |O que é teste de _software_ |
+30 minutos de aula expositiva
+30 minutos de discussão em pequenos grupos
+20 minutos para  discussão geral |
+Não há avaliação
+
+|=========================================================

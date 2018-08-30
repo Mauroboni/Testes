@@ -1,0 +1,131 @@
+[preface]
+== Leia antes começar a ler o material...
+
+//[NOTE]
+//Esse material é usado como apoio às aulas da disciplina de Testes de _software_
+//do Curso Superior de Tecnologia em Sistemas para WEB do Instituto Federal de Educação,
+//Ciência e Tecnologia do Tocantins - IFTO. Ele não substitui livros técnicos ou
+//outras fontes. Ele é apenas um resumo para auxiliar o estudante.
+
+
+
+
+
+=== Qual o propósito deste material
+Este material de apoio é destinado inicialmente aos estudantes do curso Superior
+de Tecnologia em Sistemas para Internet (CSTSI) do Instituto Federal de Educação, Ciência
+e Tecnologia do Tocantins, mas também pode ser usado por discentes de outros cursos
+tais como Ciência da Computação, Sistemas de Informação, Engenharia da Computação
+e Engenharia de Software. Ele tem o objetivo de apresentar os principais conceitos
+relacionados a testes de software, seus níveis, seus objetivos, como os testes são
+projetados e executados. A proposta é que ele sirva como um guia inicial para aqueles
+que estão dando os primeiros passos nessa área que é tão importante para o desenvolvimento
+de software. Ele são substitui livros técnicos ou a leitura de outras fontes.
+
+[TIP]
+Procure por outras fontes para complementar esse material. Um bom lugar para começar
+é o site Infoq.com.br que traz palestras e artigos atualizados relacionados a
+diversos aspectos da engenharia de _software_.
+
+
+=== Como o material está organizado
+É importante lembrar que o presente material foi construído com o intuito prioritário
+de atender ao CSTSI. Assim, as buscas por conteúdo foram feitas para atender a
+ementa da disciplina que está em vigor, que é mostrada a seguir:
+
+- Conceitos básicos relacionados a teste de software;
+- Processos de testes;
+- Ferramentas para planejamento, elaboração e automatização testes de software;
+- Manipular ferramentas para execução de planos de testes de software;
+- Classes de automação: QAI x ISTQB;
+- Gerenciamento do planejamento de testes;
+- Projeto de Casos de Teste;
+- Tipos de Testes;
+- Ferramentas;
+- Gerenciamento dos defeitos;
+- Elaboração de laudo e parecer técnico.
+
+Com base nisso esse material
+
+- O capitulo <<Revisão>> tem o objetivo de posicionar as atividades de teste de
+software dentre as demais atividades básicas do ciclo de desenvolvimento de software.
+As interações entre o teste e análise, projeto e implementação são apresentadas com o objetivo de auxiliar o estudante em um primeiro contato e entender em que momento elas ocorrem. Trata-se de capitulo informativo que não está 
+
+
+- O capitulo <<queeteste>> define o que é teste de software em linhas gerais.
+
+De forma alguma o presente livro tem a
+pretensão de cobrir todos os assuntos relacionados à área de
+programação.
+
+
+
+
+A disciplina de testes de software tem o objetivo de
+
+
+Mais importante do que conhecer as peculiaridades das ferramentas de
+testes é entender como os divresos ....
+
+
+funciona a lógica aplicada na elaboração
+de soluções desenvolvidas a partir de algoritmos computacionais. Sendo
+assim, o principal objetivo deste livro é ensiná-los a resolver
+problemas com base nos comandos e mecanismos presentes nas linguagens
+de programação, desenvolvendo assim o que chamamos de lógica de
+programação. No decorrer do livro, o leitor aprenderá gradativamente a
+dar instruções ao computador através de programas que ele próprio será
+capaz de criar. Para isso, conhecerá a linguagem de programação C, uma
+das mais utilizadas e mais importantes linguagens na área de Ciência
+da Computação.
+
+No Capítulo <<Revisão>> será abordado o conceito de algoritmo, e suas principais
+formas de representação serão apresentadas. No Capítulo 2, descrevemos
+todo o processo de tradução de um programa escrito em linguagem de
+alto nível para um programa equivalente em código de máquina, isto é,
+a linguagem que os computadores conhecem. Além disso, será apresentado
+ao leitor a estrutura de um programa na linguagem C, o que o
+habilitará o leitor a desenvolver seu primeiro programa. O Capítulo 3
+consiste no conteúdo do livro que mais desenvolve a lógica de
+programação. É nele que se encontram as principais instruções de uma
+linguagem de programação: as estruturas de controle. No Capítulo 4
+será apresentado o conceito de arranjos e, por fim, no Capítulo 5,
+explicaremos como programas complexos podem ser divididos em programas
+menores, mais fáceis de serem solucionados, através da utilização das
+funções.
+
+Recomendamos ao aluno, iniciante na programação de computadores, que
+não se limite à leitura e ao conteúdo deste livro. Pesquise na
+internet outros materiais, leia outros livros e faça todos os
+exercícios propostos. Programação, assim como matemática, requer muito
+exercício, muita prática. Como mencionado anteriormente, a programação
+de computadores é uma das subáreas mais importantes da carreira que
+você escolheu seguir. Boa parte das disciplinas do seu curso depende
+do conhecimento adquirido em Introdução à Programação. Portanto,
+dedique o máximo que puder ao aprendizado de uma área que vai
+permiti-lo transformar sonhos em realidade.
+
+
+=== Público alvo
+
+O público alvo desse livro são os alunos de Licenciatura em Computação, na
+modalidade a distância footnote::[Embora ele tenha sido feito para atender aos alunos
+da Universidade Federal da Paraíba, o seu uso não se restringe a esta
+universidade, podendo ser adotado por outras universidades do sistema UAB.].
+Ele foi concebido para ser utilizado numa disciplina de 'Introdução à Programação',
+no primeiro semestre do curso.
+
+[[como_estudar]]
+=== Como você deve estudar cada capítulo
+
+* Leia a visão geral do capítulo
+* Estude os conteúdos das seções
+* Realize as atividades no final do capítulo
+* Verifique se você atingiu os objetivos do capítulo
+
+.Na sala de aula do curso
+* Tire dúvidas e discuta sobre as atividades do livro com outros integrantes do curso
+* Leia materiais complementares eventualmente disponibilizados
+* Realize as atividades propostas pelo professor da disciplina
+
+// Sempre manter uma linha em branco no final

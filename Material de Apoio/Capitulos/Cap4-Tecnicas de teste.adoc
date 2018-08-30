@@ -1,0 +1,34 @@
+[#Tecnicas]
+== Técnicas de Teste
+:cap: Capitulo 4
+
+=== Introdução
+Esse capitulo vai ...
+
+=== O que são técnicas de teste
+As técnicas de teste fornecem as diretrizes sistemáticas para que sejam projetados
+testes eficientes. Testes eficientes são aqueles que conseguem:
+
+- exercitar a lógica interna e as interfaces de cada componente de _software_
+- verificam as entradas e saídas dos programas usando dados um conjunto de dados
+de teste, de maneira que possam ser encontrados erros em funções ou métodos,
+comportamento indesejado ou desempenho inadequado.
+
+
+* Caixa Branca ( caixa aberta  - visualiza o código fonte - Teste de unidade, testes estáticos ( análise do código, sem executar-lo ) )
+** Teste de métodos e Classes, Testes de comando de repetição, teste de condições
+*** Teste de cobertura
+*** Teste de Caminhos
+*** Teste de comandos
+*** Teste de condições
+
+* Caixa Preta ( não vejo o interior - é baseado em entradas e saídas - Teste de integração, Teste de sistema, Teste de Aceitação, Teste Alfa, Teste Beta )
+Teste baseado em entradas e saídas de Cenários Macro
+	- Teste baseado em cenários
+	- Teste baseado em Casos de uso
+	- Análise de Valores limites
+
+
+
+
+Testes A/B
