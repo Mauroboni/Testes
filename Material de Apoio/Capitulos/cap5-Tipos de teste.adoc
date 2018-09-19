@@ -16,7 +16,7 @@ Modelos do software podem ser elaborados e/ou usados no teste estrutural ou func
 - Teste de segurança
 - Teste usuário
 
-==== Teste de regressão (reteste)
+=== Teste de regressão (reteste)
 Cada vez que um novo módulo é adicionado como parte do teste de integração, o _software_ se modifica. Novos caminhos de fluxo de dados são estabelecidos, nova E/S pode ocorrer e nova lógica de controle é acionada. Assim sendo, tudo o que havia sido previamente testado corre o risco de apresentarem problemas. Esse tipo de teste ajuda a garantir que modificações não introduzam algum comportamento indesejável ou erros adicionais.
 
 

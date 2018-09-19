@@ -5,6 +5,11 @@ Mauro Henrique Lima de Boni - mauro@ifto.edu.br
 // endereço no gitbooks
 // https://ifto.gitbook.io/testes-de-_software_/.
 
+//Instrução para exibição dos ícones
+++++
+<link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.1.0/css/font-awesome.min.css">
+++++
+
 :appversion: 1.0.0
 :doctype: book
 :lang: pt-BR
@@ -23,7 +28,7 @@ Mauro Henrique Lima de Boni - mauro@ifto.edu.br
 :tip-caption: 💡
 :toc:
 :toc-title: Sumário
-:toclevels: 4
+:toclevels: 5
 :figure-caption: Figura
 //:preface-title: Leia antes de começar a ler o material
 

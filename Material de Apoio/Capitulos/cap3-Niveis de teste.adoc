@@ -1,29 +1,30 @@
-[#Estagios]
-
-== Quais os estágios de teste?
+[#Niveis]
+== Niveis de teste de acordo com o SWEBOK
 :cap: Capitulo 3
-O _Guide to the Software Engineering Body of Knowledge_ (SWEBOK) <<SWEBOK>> é um guia criado pelo IEEE e que trata de vários aspectos sobre a Engenharia de Software. Ele possui um capitulo dedicado ao testes que nos informa que o teste de software é geralmente realizado em diferentes níveis ao longo dos processos de desenvolvimento e manutenção. Os níveis podem ser distinguidos tomando como base o objeto que será testado, que é chamado de alvo, ou na finalidade, que é chamado de objetivo.
+
+=== Introdução
+Esse capitulo tem o objetivo de apresentar os níveis de teste de acordo com o _Guide to the Software Engineering Body of Knowledge_ (SWEBOK) <<SWEBOK>>, fornecendo assim uma ideia geral sobre os conceitos relacionados ao teste de software.
+
+==== Como esse capitulo está estruturado
+O presente capitulo possui uma única seção, denominada <<Estagios>>. É dividida entre os alvos dos testes e os objetivos dos testes:
+
+- Em <<Alvo>> são apresentados os conceitos sobre os niveis de teste em que é verificado uma parte do software que está sendo desenvolvido.
+- <<Objetivo>> é responsável por falar a respeito dos niveis de testes usados quando temos um objetivo, como usabilidade ou performance em vista.
+//- A seção <<porquetestar>> tem como objetivo justificar porque os testes devem ser feitos.
+//- A seção <<atividades>> tem alguns exercícios que o ajudaram a fixar melhor o conteúdo que foi apresentado.
 
 //Parei aqui
 
-O alvo do teste pode variar: um único módulo, um grupo desses módulos
-(relacionados por finalidade, uso, comportamento ou estrutura) ou um sistema inteiro.
-Podemos criar três estágios ou níveis de teste. Esses três estágios de teste não
-implicam em nenhum modelo de processo, e nenhum  deles é considerado mais importante que os outros dois.
+[#Estagios]
+=== Niveis do teste
+O SWEBOK é um guia criado pelo IEEE e que trata de vários aspectos sobre a Engenharia de Software. Ele possui um capitulo dedicado ao testes que nos informa que o teste de software é geralmente realizado em diferentes níveis ao longo dos processos de desenvolvimento e manutenção. Os níveis podem ser distinguidos tomando como base o objeto que será testado, que é chamado de alvo, ou na finalidade, que é chamado de objetivo.
 
-Segundo Ian Sommerville<<SOMMERVILLE>>, todo software deve passar por três estágios de teste.
+[#Alvo]
+==== Alvo do teste
 
- . Testes de desenvolvimento
- . Testes de integração
- . Testes de usuário
+O alvo do teste pode variar: um único módulo, um grupo desses módulos (relacionados por finalidade, uso, comportamento ou estrutura) ou um sistema inteiro. Podemos criar três estágios ou níveis de teste. Esses três estágios de teste não implicam em nenhum modelo de processo e nenhum  deles é considerado mais importante que os outros dois.
 
-Apesar dessa divisão ser simples, podemos criar outras categorias de estágio. Para cada nível de teste, os seguintes aspectos podem ser identificados: seus objetivos genéricos, os produtos de trabalho utilizados como referência para derivar os casos de testes (ex.: base do teste), o objeto do teste (o que está sendo testado), defeitos e falhas típicas a se encontrar, testes (“harness”) e ferramentas de suporte e abordagens e responsabilidades específicas. A seguir cada um dos estágios é tratado com mais detalhes e as suas subdivisões são apresentadas.
-
-
-=== Testes de desenvolvimento
-Os testes de desenvolvimento representam todos os testes que são realizados pelos desenvolvedores de um sistema. Nesse caso, o testador é o próprio desenvolvedor ou um membro da equipe.
-
-==== Testes de unidade / unitário
+===== Testes de unidade / unitário
 Os testes de unidade, muitas vezes chamados de testes unitários, são responsáveis por verificar o funcionamento de elementos de software de maneira isolada, ou seja eles são testados de forma individual ​​separadamente. O teste de unidade focaliza o esforço de verificação na menor unidade do projeto de _software_ -- o componente ou módulo de _software_. Se estivermos escrevendo um código usando uma linguagem como o JAVA por exemplo, serão testados os métodos das classes, uma vez que eles normalmente são as menores unidades do projeto. O teste de unidade, na maioria das vezes, ocorre com acesso ao código fonte que está sendo testado e com o suporte de ferramentas de depuração. Os programadores que escreveram o código frequentemente, mas nem sempre, realizam testes unitários. O TDD (do inglês _Test Driven Development_) ou Desenvolvimento Guiado por Testes, que é um exemplo de teste unitário, é apresentado na seção a seguir.
 
 Esse material pode ajudar. Dar uma olhada !!
@@ -31,7 +32,7 @@ https://edisciplinas.usp.br/pluginfile.php/384739/mod_resource/content/1/Aula%20
 http://homepages.dcc.ufmg.br/~figueiredo/disciplinas/aulas/testes-software_v01.pdf
 
 
-===== Desenvolvimento Guiado por Testes (TDD, do inglês _Test Driven Development_)
+====== Desenvolvimento Guiado por Testes (TDD, do inglês _Test Driven Development_)
 O TDD é uma abordagem para o desenvolvimento de programas em que se intercalam testes e a escrita de código-fonte. O código evolui de maneira incremental, juntamente com um teste para esse incremento. Importante: *Nada é feito, ou seja, nenhum novo código é escrito sem que aquilo que está sendo testado passe no teste.* A figura <<#tdd>>, mostrada a seguir, que foi copiada do livro de Engenharia de Software de Ian Sommerville<<SOMMERVILLE>>, fornece uma visão geral sobre o processo do TDD.
 
 [#tdd]
@@ -60,14 +61,52 @@ Depuração simplificada::: Quando um teste falhar, deve ser óbvio onde está o
 
 Documentação de sistema::: Os próprios testes são uma forma de documentação que descreve o que o código deve estar fazendo.
 
-
-==== Testes de integração
+===== Testes de integração
 image::{cap}/testing-integration.png[Teste de integração,300,300]
 
 O teste de integração, também conhecido como teste de componente, é o processo de verificar as interações entre os componentes de software. Ele fará com que duas ou mais classes, por exemplo, sejam postas em funcionamento juntas. Devemos pensar que se individualmente elas funcionaram, quando colocadas juntas, elas devem continuar funcionando. Estratégias clássicas de teste de integração, como _top-down_ e _bottom-up_, são frequentemente usadas com software estruturado hierarquicamente. Estratégias de integração modernas e sistemáticas são tipicamente direcionadas à arquitetura, o que envolve a integração gradual dos componentes ou subsistemas de software com base em segmentos funcionais identificados. O teste de integração geralmente é uma atividade contínua em cada estágio do desenvolvimento, durante o qual os engenheiros de software abstraem as perspectivas de nível inferior e concentram-se nas perspectivas do nível em que estão integrando. Para outros, além do software pequeno e simples, as estratégias de teste de integração incremental geralmente são preferidas para reunir todos os componentes de uma só vez - o que geralmente é chamado de teste _“big bang”_.
 
-=== Teste de sistema
+===== Teste de sistema
 O teste do sistema está preocupado em testar o comportamento de um sistema inteiro definido pelo escopo de um projeto ou programa de desenvolvimento. De acordo com o ISTQB, no teste de sistema, o ambiente de teste deve corresponder o máximo possível ao objetivo final, ou o ambiente de produção, para minimizar que os riscos de falhas específicas de ambiente não serem encontradas durante o teste. Ele pode ser baseado em descrições de alto nível do comportamento do sistema, tais como especificação de riscos e/ou de requisitos, processos de negócios ou casos de uso. O teste do sistema é geralmente considerado apropriado para avaliar os requisitos não funcionais do sistema, ou seja a segurança, a velocidade, precisão e também a confiabilidade. Interfaces externas para outros aplicativos, utilitários, dispositivos de _hardware_ ou os ambientes operacionais também são geralmente avaliados nesse nível. Uma equipe de teste independente é frequentemente responsável pelo teste de sistema.
+
+[#Objetivo]
+==== Objetivos do teste
+
+Segundo o SWEBOK, declarar os objetivos do teste em termos precisos e quantitativos suporta a medição e o controle do processo de teste. O teste pode ser destinado a verificar propriedades diferentes. Os casos de teste podem ser projetados para verificar se as especificações funcionais estão corretamente implementadas, o que é referido na literatura como testes de conformidade, testes de correção ou testes funcionais. No entanto, várias outras propriedades não funcionais também podem ser testadas, incluindo desempenho, confiabilidade e usabilidade, entre muitas outras.
+
+Outros objetivos importantes para o teste incluem, mas não se limitam a, medição de confiabilidade, identificação de vulnerabilidades de segurança, avaliação de usabilidade e aceitação de software, para os quais diferentes abordagens seriam adotadas. Observe que, em geral, os objetivos do teste variam de acordo com a meta de teste; diferentes finalidades são abordadas em diferentes níveis de teste.
+
+Os itens elencados a seguir são os mais usados na  literatura. Observe que alguns tipos de testes são mais apropriados para pacotes de software personalizados - testes de instalação, por exemplo - e outros para produtos de consumo, como o teste beta.
+
+O SWEBOK enumera 13 testes diferentes nessa categoria, a saber:
+
+Teste de Aceitação / Qualificação
+O teste de aceitação / qualificação determina se um sistema satisfaz seus critérios de aceitação, geralmente verificando os comportamentos desejados do sistema em relação aos requisitos do cliente. O cliente ou o representante de um cliente, portanto, especifica ou realiza atividades diretamente para verificar se seus requisitos foram atendidos ou, no caso de um produto de consumo, se a organização atendeu aos requisitos estabelecidos para o mercado-alvo. Esta atividade de teste pode ou não envolver os desenvolvedores do sistema
+
+O teste de aceitação ou de aceite frequentemente é realizado pelo cliente ou por usuário do sistema; os interessados (_stakeholders_) também podem ser envolvidos.
+O objetivo desse teste é estabelecer a confiança no sistema, parte do sistema ou uma característica não específica do sistema. Procurar defeitos não é o principal foco. Ele pode avaliar a disponibilidade do sistema para entrar em produção, apesar de não ser necessariamente o último nível de teste, uma vez que, por exemplo, um teste de integração em larga escala pode ser feito após.
+As formas de teste de aceite incluem tipicamente os seguintes:
+
+- Teste de aceitação pelo usuário
+- Teste Operacional de Aceite
+- Teste de aceite de contrato e regulamento
+- Alfa e Beta Teste (ou teste no campo)
+
+Teste Alfa::: Realizados pelos usuários - testes manuais. São testes realizados em um ambiente controlado pelo desenvolvedor que registra os problemas de uso e os erros que aconteceram.
+
+Teste Beta::: Realizados pelos usuários mais usuários - testes manuais. Os testes são feitos no ambiente do usuário. Mais mais difícil para o desenvolvedor acompanhar uma vez que podem haver uma quantidade muito grande de usuários.
+
+Testes de Instalação
+Muitas vezes, após a conclusão do sistema e teste de aceitação, o software é verificado após a instalação no ambiente de produção. Os testes de instalação podem ser vistos como testes de sistema realizados no ambiente operacional de configurações de hardware e outras restrições operacionais. Os procedimentos de instalação também podem ser verificados.
+
+
+=== Testes de desenvolvimento
+Os testes de desenvolvimento representam todos os testes que são realizados pelos desenvolvedores de um sistema. Nesse caso, o testador é o próprio desenvolvedor ou um membro da equipe.
+
+
+
+
+
 
 === Teste de aceitação
 O teste de aceitação ou de aceite frequentemente é realizado pelo cliente ou por usuário do sistema; os interessados (_stakeholders_) também podem ser envolvidos.
@@ -82,5 +121,13 @@ As formas de teste de aceite incluem tipicamente os seguintes:
 Teste Alfa::: Realizados pelos usuários - testes manuais. São testes realizados em um ambiente controlado pelo desenvolvedor que registra os problemas de uso e os erros que aconteceram.
 
 Teste Beta::: Realizados pelos usuários mais usuários - testes manuais. Os testes são feitos no ambiente do usuário. Mais mais difícil para o desenvolvedor acompanhar uma vez que podem haver uma quantidade muito grande de usuários.
+
+Estratégias de teste
+Segundo Roger Pressman <<PRESSMAN>>, há várias estratégias de testes exisistentes e elas fornecem as seguintes características genéricas:
+
+. As revisões formais são feitas no inicio
+. O teste começa no nível de componente e prossegue "para fora", em direção à integração de todo o sistema
+. Diferentes técnicas de teste são adequadas em diferentes momentos
+
 
 //
